@@ -1,7 +1,5 @@
 package com.company.domain.product;
 
-import java.math.BigDecimal;
-
 /**
  * Abstract because I want to force the creation of concrete products
  * Didn't take into account currency symbol, as long as we only want to print it, we could put into toString
@@ -38,7 +36,7 @@ public abstract class Product {
         return quantity;
     }
 
-    public void addProduct(){
+    public void addProduct() {
         quantity++;
     }
 

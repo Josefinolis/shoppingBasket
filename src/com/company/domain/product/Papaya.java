@@ -3,7 +3,7 @@ package com.company.domain.product;
 public class Papaya extends Product {
 
     public Papaya() {
-        super("Papaya", 50);
+        super("Papaya", 0.50);
     }
 
     @Override

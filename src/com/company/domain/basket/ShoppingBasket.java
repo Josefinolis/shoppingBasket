@@ -2,7 +2,6 @@ package com.company.domain.basket;
 
 import com.company.domain.product.*;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +19,7 @@ public class ShoppingBasket {
 
     public void add(String productKey) {
         Product product = products.get(productKey);
-        if(product != null) {
+        if (product != null) {
             product.addProduct();
         }//Custom exception could be thrown here, like ProductNotFoundInBasketException
     }
@@ -37,7 +36,7 @@ public class ShoppingBasket {
 
     private double getTotalPrice() {
         double result = 0;
-        for(Product product : products.values()) {
+        for (Product product : products.values()) {
             result += product.getTotalPrice();
         }
 
