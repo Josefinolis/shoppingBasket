@@ -5,6 +5,15 @@ import com.company.domain.product.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * First of all, some decisions made just for simplicity:
+ * I used Java8 and only java8, no frameworks providing DI
+ * It is lacking also unitary testing
+ * There is no use of real currency, I used double for prices, which is not a good choice due to the loss of precision
+ *  when operating with them, but I think it should work fine with the operations requested
+ * There is also missing a remove product operation in ShoppingBasket
+ * No error management
+ */
 public class ShoppingBasket {
 
     private Map<String, Product> products;
