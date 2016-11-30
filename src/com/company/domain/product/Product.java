@@ -9,24 +9,28 @@ import java.math.BigDecimal;
 public abstract class Product {
 
     private String name;
-    private BigDecimal pricePerUnit;
+    /**
+     * Although for currency the use of float and double discouraged due to the loss of precission, I think for
+     * this example it is fine
+     */
+    private double pricePerUnit;
     private int quantity;
 
-    protected Product(String name, BigDecimal pricePerUnit) {
+    protected Product(String name, double pricePerUnit) {
         this.name = name;
         this.pricePerUnit = pricePerUnit;
         this.quantity = 0;
     }
 
-    public BigDecimal getTotalPrice() {
-        return pricePerUnit.multiply(new BigDecimal(quantity));
+    public double getTotalPrice() {
+        return pricePerUnit * quantity;
     }
 
     public String toString() {
         return String.format("%-10s x %2d -> %8.2f = %8.2f", name, quantity, pricePerUnit, getTotalPrice());
     }
 
-    public BigDecimal getPricePerUnit() {
+    public double getPricePerUnit() {
         return pricePerUnit;
     }
 

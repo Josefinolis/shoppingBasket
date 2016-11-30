@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ShoppingBasket {
 
-    Map<String, Product> products;
+    private Map<String, Product> products;
 
     public ShoppingBasket() {
         products = new HashMap<>();
@@ -35,10 +35,10 @@ public class ShoppingBasket {
         return stringBuilder.toString();
     }
 
-    private BigDecimal getTotalPrice() {
-        BigDecimal result = new BigDecimal(0);
+    private double getTotalPrice() {
+        double result = 0;
         for(Product product : products.values()) {
-            result = result.add(product.getTotalPrice());
+            result += product.getTotalPrice();
         }
 
         return result;

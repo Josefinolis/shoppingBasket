@@ -1,18 +1,16 @@
 package com.company.domain.product;
 
-import java.math.BigDecimal;
-
 public class Papaya extends Product {
 
     public Papaya() {
-        super("Papaya", new BigDecimal(50));
+        super("Papaya", 50);
     }
 
     @Override
-    public BigDecimal getTotalPrice() {
+    public double getTotalPrice() {
         int discountedUnits = getQuantity() / 3;
 
-        return getPricePerUnit().multiply(new BigDecimal(getQuantity() - discountedUnits));
+        return getPricePerUnit() * (getQuantity() - discountedUnits);
     }
 
 }
